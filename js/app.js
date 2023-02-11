@@ -29,21 +29,19 @@ let navbarUL = document.getElementById('navbar__list');
 let navList = '';
 
 //for active states
-const navButns = document.querySelectorAll(".menu__link")
+let navButns = document.querySelectorAll(".menu__link");
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
-
 function addClass(section) {
     section.classList.add("your-active-class");
 }
 function removeClass(section) {
     section.classList.remove("your-active-class");
 }
-
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -63,6 +61,7 @@ function createNavBar() {
 
 // Add class 'active' to section when near top of viewport
 function activeState() {
+    let navButns = document.querySelectorAll(".menu__link");
     sections.forEach((section, i) => {
         let rect = section.getBoundingClientRect();
         let screenHeight = screen.height;
@@ -78,6 +77,21 @@ function activeState() {
 }
 
 // Scroll to anchor ID using scrollTO event
+function NavScroll() {
+    let Butns = document.querySelectorAll(".menu__link");
+    Butns.forEach((button, i) => {
+        button.addEventListener('click', function(event){
+            event.preventDefault();
+            // console.log('done');
+            window.scrollTo({
+                top: sections[i].offsetTop,
+                behavior:"smooth"
+            });
+            // console.log('done2');
+            
+        });
+    });
+}
 
 /**
  * End Main Functions
@@ -87,10 +101,8 @@ function activeState() {
 
 // Build menu 
 createNavBar();
-
 // Scroll to section on link click
+NavScroll();
 
 // Set sections as active
 document.addEventListener('scroll', activeState);
-
-
