@@ -18,18 +18,21 @@ body {
     color: #fff;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
 
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
-    margin: 2em 1rem;
+    margin: 1em 2rem;
 }
 
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
-        margin: 2em 4rem 1em;
+        margin: 2em 3rem 1em;
     }
 }
 
@@ -68,6 +71,7 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    color: aqua;
 }
 
 .navbar__menu li {
@@ -79,12 +83,18 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: rgb(0, 0, 0);
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
-    color: #fff;
+    background: #333333;
+    color: rgb(255, 255, 255);
+    transition: ease 0.3s all;
+}
+
+.active__button {
+    background: #333333;
+    color: rgb(255, 255, 255);
     transition: ease 0.3s all;
 }
 
